@@ -1,5 +1,4 @@
-use std::str::Chars;
-use std::str::FromStr;
+use core::str::{Chars, FromStr};
 
 use byteorder::LittleEndian;
 use byteorder::WriteBytesExt;

@@ -1,7 +1,7 @@
 //! Lexer implementation
+use core::cell::{Cell, RefCell};
 use std::borrow::Cow::Borrowed;
 use std::borrow::{Borrow, Cow};
-use std::cell::{Cell, RefCell};
 
 use std::rc::Rc;
 
@@ -17,7 +17,7 @@ use crate::rule_context::EmptyContextType;
 use crate::token::TOKEN_INVALID_TYPE;
 use crate::token_factory::{CommonTokenFactory, TokenAware, TokenFactory};
 use crate::token_source::TokenSource;
-use std::ops::{Deref, DerefMut};
+use core::ops::{Deref, DerefMut};
 
 ///  Lexer functionality required by `LexerATNSimulator` to work properly
 pub trait Lexer<'input>:

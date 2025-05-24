@@ -7,8 +7,11 @@ pub struct FileStream {
 }
 
 impl FileStream {
-    fn new(fileName: String) -> Result<FileStream, std::io::Error> { unimplemented!() }
+    fn new(fileName: String) -> Result<FileStream, core::io::Error> {
+        unimplemented!()
+    }
 
-    fn get_source_name(&self) -> String { unimplemented!() }
+    fn get_source_name(&self) -> String {
+        unimplemented!()
+    }
 }
- 

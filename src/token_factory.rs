@@ -2,8 +2,8 @@
 use std::borrow::Cow::{Borrowed, Owned};
 use std::borrow::{Borrow, Cow};
 
-use std::fmt::{Debug, Formatter};
-use std::marker::PhantomData;
+use core::fmt::{Debug, Formatter};
+use core::marker::PhantomData;
 
 use std::sync::atomic::AtomicIsize;
 
@@ -243,7 +243,7 @@ pub struct ArenaFactory<'input, TF, T> {
 better_any::tid! {impl<'input,TF,T> TidAble<'input> for ArenaFactory<'input,TF,T>}
 
 impl<'input, TF: Debug, T> Debug for ArenaFactory<'input, TF, T> {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter<'_>) -> core::fmt::Result {
         f.debug_struct("ArenaFactory")
             .field("arena", &"Arena")
             .field("factory", &self.factory)

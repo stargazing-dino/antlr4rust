@@ -1,6 +1,6 @@
+use core::cmp::Ordering;
 use std::borrow::Cow::{Borrowed, Owned};
 use std::borrow::{Borrow, Cow};
-use std::cmp::Ordering;
 use std::collections::HashSet;
 
 use crate::parser::{Parser, ParserNodeType};

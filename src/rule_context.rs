@@ -1,9 +1,9 @@
 //! Minimal parser node
-use std::borrow::{Borrow, BorrowMut};
-use std::cell::{Cell, RefCell};
-use std::fmt::{Debug, Formatter};
-use std::iter::from_fn;
-use std::marker::PhantomData;
+use core::borrow::{Borrow, BorrowMut};
+use core::cell::{Cell, RefCell};
+use core::fmt::{Debug, Formatter};
+use core::iter::from_fn;
+use core::marker::PhantomData;
 use std::rc::{Rc, Weak};
 
 use crate::atn::INVALID_ALT;
@@ -12,7 +12,7 @@ use crate::parser_rule_context::ParserRuleContext;
 use crate::token_factory::TokenFactory;
 use crate::tree::{ParseTree, Tree};
 use better_any::{Tid, TidAble};
-use std::any::type_name;
+use core::any::type_name;
 
 //pub trait RuleContext:RuleNode {
 /// Minimal rule context functionality required for parser to work properly
@@ -234,7 +234,7 @@ impl<'input, ExtCtx: CustomRuleContext<'input>> RuleContext<'input>
 }
 
 impl<'input, ExtCtx: CustomRuleContext<'input>> Debug for BaseRuleContext<'input, ExtCtx> {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter<'_>) -> core::fmt::Result {
         f.debug_struct(type_name::<Self>())
             .field("invoking_state", &self.invoking_state)
             .field("..", &"..")

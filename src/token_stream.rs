@@ -1,7 +1,7 @@
 //! `IntStream` that produces tokens for Parser
-use std::borrow::Borrow;
-use std::cmp::min;
-use std::marker::PhantomData;
+use core::borrow::Borrow;
+use core::cmp::min;
+use core::marker::PhantomData;
 
 use crate::char_stream::InputData;
 use crate::int_stream::{IntStream, IterWrapper};
@@ -9,7 +9,7 @@ use crate::token::{OwningToken, Token, TOKEN_EOF, TOKEN_INVALID_TYPE};
 use crate::token_factory::TokenFactory;
 use crate::token_source::TokenSource;
 use better_any::{Tid, TidAble};
-use std::fmt::{Debug, Formatter};
+use core::fmt::{Debug, Formatter};
 
 /// An `IntSteam` of `Token`s
 ///
@@ -81,7 +81,7 @@ pub struct UnbufferedTokenStream<'input, T: TokenSource<'input>> {
 better_any::tid! { impl<'input,T> TidAble<'input> for UnbufferedTokenStream<'input, T> where T: TokenSource<'input>}
 
 impl<'input, T: TokenSource<'input>> Debug for UnbufferedTokenStream<'input, T> {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter<'_>) -> core::fmt::Result {
         f.debug_struct("UnbufferedTokenStream")
             .field("tokens", &self.tokens)
             .field("current_token_index", &self.current_token_index)

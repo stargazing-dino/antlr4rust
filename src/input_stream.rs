@@ -3,7 +3,7 @@ use std::borrow::Cow;
 
 use crate::char_stream::{CharStream, InputData};
 use crate::int_stream::IntStream;
-use std::ops::Deref;
+use core::ops::Deref;
 
 use better_any::TidAble;
 
@@ -220,7 +220,7 @@ where
 
 #[cfg(test)]
 mod test {
-    use std::ops::Deref;
+    use core::ops::Deref;
 
     use crate::char_stream::CharStream;
     use crate::int_stream::{IntStream, EOF};

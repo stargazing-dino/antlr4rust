@@ -1,8 +1,8 @@
 //! Symbols that parser works on
 use std::borrow::{Borrow, Cow};
 
-use std::fmt::Formatter;
-use std::fmt::{Debug, Display};
+use core::fmt::Formatter;
+use core::fmt::{Debug, Display};
 
 use std::sync::atomic::{AtomicIsize, Ordering};
 
@@ -122,7 +122,7 @@ where
 }
 
 impl<T: Borrow<str> + Debug> Display for GenericToken<T> {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter<'_>) -> core::fmt::Result {
         let txt = if self.token_type == TOKEN_EOF {
             "<EOF>"
         } else {

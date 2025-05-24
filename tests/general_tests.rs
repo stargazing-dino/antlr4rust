@@ -8,9 +8,9 @@
 // extern crate lazy_static;
 
 mod gen {
-    use std::fmt::Write;
+    use core::fmt::Write;
+    use core::iter::FromIterator;
     use std::io::Read;
-    use std::iter::FromIterator;
 
     use antlr_rust::common_token_stream::CommonTokenStream;
     use antlr_rust::int_stream::IntStream;

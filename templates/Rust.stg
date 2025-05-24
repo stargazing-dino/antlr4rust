@@ -81,12 +81,12 @@ use super::<file.grammarName; format="low">visitor::*;
 use antlr_rust::lazy_static;
 use antlr_rust::{TidAble,TidExt};
 
-use std::marker::PhantomData;
+use core::marker::PhantomData;
 use std::sync::Arc;
 use std::rc::Rc;
-use std::convert::TryFrom;
-use std::cell::RefCell;
-use std::ops::{DerefMut, Deref};
+use core::convert::TryFrom;
+use core::cell::RefCell;
+use core::ops::{DerefMut, Deref};
 use std::borrow::{Borrow,BorrowMut};
 use std::any::{Any,TypeId};
 
@@ -1255,10 +1255,10 @@ use antlr_rust::vocabulary::{Vocabulary,VocabularyImpl};
 use antlr_rust::{lazy_static,Tid,TidAble,TidExt};
 
 use std::sync::Arc;
-use std::cell::RefCell;
+use core::cell::RefCell;
 use std::rc::Rc;
-use std::marker::PhantomData;
-use std::ops::{Deref, DerefMut};
+use core::marker::PhantomData;
+use core::ops::{Deref, DerefMut};
 
 <lexer>
 >>

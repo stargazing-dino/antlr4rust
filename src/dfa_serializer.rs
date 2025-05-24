@@ -1,4 +1,4 @@
-use std::fmt::{Display, Formatter};
+use core::fmt::{Display, Formatter};
 
 use crate::dfa::DFA;
 use crate::dfa_state::DFAState;
@@ -10,7 +10,7 @@ pub struct DFASerializer<'a, 'b> {
 }
 
 impl Display for DFASerializer<'_, '_> {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter<'_>) -> core::fmt::Result {
         let dfa = &self.dfa.states;
         for source in dfa.iter() {
             for (i, edge) in source.edges.iter().copied().enumerate() {

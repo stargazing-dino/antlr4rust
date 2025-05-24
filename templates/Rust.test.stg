@@ -91,7 +91,7 @@ struct MyRuleNode\<T:CustomRuleContext>(BaseParserRuleContext\<MyRuleNodeCtx\<T>
 struct MyRuleNodeCtx\<T:CustomRuleContext>(T,std::cell::Cell\<isize>);
 use core::fmt::{Formatter,Debug};
 impl\<T:CustomRuleContext> Debug for MyRuleNode\<T>{
-    fn fmt(&self, f: &mut Formatter) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter) -> core::fmt::Result {
         f.write_str(std::any::type_name::\<Self>())
     }
 }

@@ -1,5 +1,5 @@
-use std::borrow::Borrow;
-use std::cell::Cell;
+use core::borrow::Borrow;
+use core::cell::Cell;
 // use crate::utils::Cow2::{Borrowed2, Owned2};
 
 pub fn escape_whitespaces(data: impl Borrow<str>, escape_spaces: bool) -> String {

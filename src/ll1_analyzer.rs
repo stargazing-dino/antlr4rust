@@ -1,5 +1,5 @@
+use core::ops::Deref;
 use std::collections::HashSet;
-use std::ops::Deref;
 use std::sync::Arc;
 
 use bit_set::BitSet;

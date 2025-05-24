@@ -1,11 +1,11 @@
 //! General AST
-use std::any::Any;
-use std::borrow::Borrow;
+use core::any::Any;
+use core::borrow::Borrow;
 
-use std::fmt::{Debug, Formatter};
-use std::iter::from_fn;
-use std::marker::PhantomData;
-use std::ops::Deref;
+use core::fmt::{Debug, Formatter};
+use core::iter::from_fn;
+use core::marker::PhantomData;
+use core::ops::Deref;
 use std::rc::Rc;
 
 use crate::atn::INVALID_ALT;
@@ -20,7 +20,7 @@ use crate::token::Token;
 use crate::token_factory::TokenFactory;
 use crate::{interval_set, trees, CoerceTo};
 use better_any::{Tid, TidAble};
-use std::mem;
+use core::mem;
 
 //todo try to make in more generic
 #[allow(missing_docs)]
@@ -178,7 +178,7 @@ impl<'input, Node: ParserNodeType<'input>, T: 'static> ParseTree<'input>
 }
 
 impl<'input, Node: ParserNodeType<'input>, T: 'static> Debug for LeafNode<'input, Node, T> {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter<'_>) -> core::fmt::Result {
         if self.symbol.borrow().get_token_type() == EOF {
             f.write_str("<EOF>")
         } else {

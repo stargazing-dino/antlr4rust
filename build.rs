@@ -1,10 +1,5 @@
-use std::convert::TryInto;
+use core::error::Error;
 use std::env;
-use std::env::VarError;
-use std::error::Error;
-use std::fs::{read_dir, DirEntry, File};
-use std::io::Write;
-use std::path::Path;
 use std::process::Command;
 
 fn main() {

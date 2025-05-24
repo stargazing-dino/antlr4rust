@@ -1,10 +1,10 @@
 //! Error types
-use std::borrow::Borrow;
-use std::error::Error;
-use std::fmt;
-use std::fmt::Formatter;
-use std::fmt::{Debug, Display};
-use std::ops::Deref;
+use core::borrow::Borrow;
+use core::error::Error;
+use core::fmt;
+use core::fmt::Formatter;
+use core::fmt::{Debug, Display};
+use core::ops::Deref;
 use std::rc::Rc;
 
 use crate::atn_simulator::IATNSimulator;

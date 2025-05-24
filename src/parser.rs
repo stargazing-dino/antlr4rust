@@ -1,8 +1,8 @@
 //! Base parser implementation
-use std::borrow::Borrow;
-use std::cell::{Cell, RefCell};
-use std::marker::PhantomData;
-use std::ops::{Deref, DerefMut};
+use core::borrow::Borrow;
+use core::marker::PhantomData;
+use core::ops::{Deref, DerefMut};
+use core::cell::{Cell, RefCell};
 use std::rc::Rc;
 use std::sync::Arc;
 

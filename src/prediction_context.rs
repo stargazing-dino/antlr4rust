@@ -1,8 +1,8 @@
+use core::fmt::{Display, Error, Formatter};
+use core::ops::Deref;
 use std::borrow::Cow;
 use std::collections::HashMap;
-use std::fmt::{Display, Error, Formatter};
 use std::hash::{BuildHasher, Hash, Hasher};
-use std::ops::Deref;
 
 use std::sync::{Arc, RwLock};
 
