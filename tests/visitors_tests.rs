@@ -31,7 +31,7 @@ mod gen {
 
     #[test]
     fn test_visit_terminal_node() {
-        let mut lexer = VisitorBasicLexer::new(InputStream::new("A".into()));
+        let lexer = VisitorBasicLexer::new(InputStream::new("A".into()));
         let mut parser = VisitorBasicParser::new(CommonTokenStream::new(lexer));
 
         let root = parser.s().unwrap();
@@ -68,7 +68,7 @@ mod gen {
 
     #[test]
     fn test_visit_error_node() {
-        let mut lexer = VisitorBasicLexer::new(InputStream::new("".into()));
+        let lexer = VisitorBasicLexer::new(InputStream::new("".into()));
         let mut parser = VisitorBasicParser::new(CommonTokenStream::new(lexer));
 
         let root = parser.s().unwrap();
@@ -103,8 +103,8 @@ mod gen {
     }
 
     #[test]
-    fn test_should_not_visit_EOF() {
-        let mut lexer = VisitorBasicLexer::new(InputStream::new("A".into()));
+    fn test_should_not_visit_eof() {
+        let lexer = VisitorBasicLexer::new(InputStream::new("A".into()));
         let mut parser = VisitorBasicParser::new(CommonTokenStream::new(lexer));
 
         let root = parser.s().unwrap();
@@ -155,7 +155,7 @@ mod gen {
 
     #[test]
     fn test_should_not_visit_anything() {
-        let mut lexer = VisitorBasicLexer::new(InputStream::new("A".into()));
+        let lexer = VisitorBasicLexer::new(InputStream::new("A".into()));
         let mut parser = VisitorBasicParser::new(CommonTokenStream::new(lexer));
 
         let root = parser.s().unwrap();
@@ -176,8 +176,8 @@ mod gen {
 
             fn should_visit_next_child(
                 &self,
-                node: &<Self::Node as ParserNodeType<'_>>::Type,
-                current: &Self::Return,
+                _node: &<Self::Node as ParserNodeType<'_>>::Type,
+                _current: &Self::Return,
             ) -> bool {
                 false
             }
@@ -203,8 +203,8 @@ mod gen {
 
             fn aggregate_results(
                 &self,
-                aggregate: Self::Return,
-                next: Self::Return,
+                _aggregate: Self::Return,
+                _next: Self::Return,
             ) -> Self::Return {
                 panic!("Should not be reachable")
             }
