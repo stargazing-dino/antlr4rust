@@ -2,7 +2,7 @@
 A set of utility routines useful for all kinds of ANTLR trees.
 */
 
-use std::ops::Deref;
+use core::ops::Deref;
 
 use crate::tree::Tree;
 use crate::utils;

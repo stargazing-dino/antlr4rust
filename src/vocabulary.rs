@@ -1,10 +1,9 @@
 #![allow(missing_docs)]
 //! Mapping from symbol type to its string representation
-use std::borrow::Borrow;
-//use std::borrow::Cow;
+use core::borrow::Borrow;
+use core::cmp::max;
+use core::fmt::Debug;
 use std::borrow::Cow::{self, Borrowed, Owned};
-use std::cmp::max;
-use std::fmt::Debug;
 
 use crate::dfa::ScopeExt;
 use crate::token::TOKEN_EOF;

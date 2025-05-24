@@ -1,6 +1,6 @@
 //! Error reporting
-use std::cell::Ref;
-use std::ops::Deref;
+use core::cell::Ref;
+use core::ops::Deref;
 
 use bit_set::BitSet;
 
@@ -13,7 +13,7 @@ use crate::recognizer::Recognizer;
 
 use crate::token_factory::TokenFactory;
 use std::borrow::Cow;
-use std::fmt::Debug;
+use core::fmt::Debug;
 
 /// Describes interface for listening on parser/lexer errors.
 /// Should only listen for errors, for processing/recovering from errors use `ErrorStrategy`

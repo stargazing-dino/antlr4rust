@@ -1,5 +1,5 @@
-use std::fmt::{Display, Error, Formatter};
-use std::hash::{Hash, Hasher};
+use core::fmt::{Display, Error, Formatter};
+use core::hash::{Hash, Hasher};
 
 use murmur3::murmur3_32::MurmurHasher;
 

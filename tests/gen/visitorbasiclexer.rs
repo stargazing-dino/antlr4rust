@@ -22,9 +22,9 @@ use antlr_rust::TokenSource;
 
 use antlr_rust::{lazy_static, Tid, TidAble, TidExt};
 
-use std::cell::RefCell;
-use std::marker::PhantomData;
-use std::ops::{Deref, DerefMut};
+use core::marker::PhantomData;
+use core::ops::{Deref, DerefMut};
+use core::cell::RefCell;
 use std::rc::Rc;
 use std::sync::Arc;
 

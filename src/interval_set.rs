@@ -1,6 +1,6 @@
+use core::cmp::{max, min, Ordering};
 use std::borrow::Cow;
 use std::borrow::Cow::Borrowed;
-use std::cmp::{max, min, Ordering};
 
 use crate::token::{TOKEN_EOF, TOKEN_EPSILON};
 use crate::vocabulary::{Vocabulary, DUMMY_VOCAB};

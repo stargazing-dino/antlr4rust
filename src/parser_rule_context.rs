@@ -1,9 +1,9 @@
 //! Full parser node
-use std::any::{type_name, Any};
-use std::borrow::{Borrow, BorrowMut};
-use std::cell::{Ref, RefCell, RefMut};
-use std::fmt::{Debug, Error, Formatter};
-use std::ops::{Deref, DerefMut};
+use core::any::{type_name, Any};
+use core::borrow::{Borrow, BorrowMut};
+use core::fmt::{Debug, Error, Formatter};
+use core::ops::{Deref, DerefMut};
+use core::cell::{Ref, RefCell, RefMut};
 use std::rc::Rc;
 
 use better_any::{Tid, TidAble, TidExt};

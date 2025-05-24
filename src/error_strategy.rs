@@ -1,9 +1,8 @@
 //! Error handling and recovery
-use std::borrow::Borrow;
-use std::error::Error;
-use std::fmt;
-use std::fmt::{Display, Formatter};
-use std::ops::{Deref, DerefMut};
+use core::borrow::Borrow;
+use core::error::Error;
+use core::fmt::{self, Display, Formatter};
+use core::ops::{Deref, DerefMut};
 use std::rc::Rc;
 
 use crate::atn_simulator::IATNSimulator;

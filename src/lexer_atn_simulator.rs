@@ -1,10 +1,10 @@
 //! Implementation of lexer automata(DFA)
-use std::cell::Cell;
+use core::cell::Cell;
 
-use std::ops::Deref;
+use core::ops::Deref;
+use core::usize;
 use std::rc::Rc;
 use std::sync::Arc;
-use std::usize;
 
 use crate::atn::ATN;
 use crate::atn_config::{ATNConfig, ATNConfigType};

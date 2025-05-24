@@ -1,8 +1,8 @@
-use std::cmp::max;
+use core::cmp::max;
+use core::fmt::{Debug, Error, Formatter};
+use core::hash::{Hash, Hasher};
+use core::ops::Deref;
 use std::collections::HashMap;
-use std::fmt::{Debug, Error, Formatter};
-use std::hash::{Hash, Hasher};
-use std::ops::Deref;
 
 use bit_set::BitSet;
 use murmur3::murmur3_32::MurmurHasher;

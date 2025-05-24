@@ -1,6 +1,6 @@
-use std::any::{Any, TypeId};
+use core::any::{Any, TypeId};
+use core::fmt::Debug;
 use std::borrow::Cow;
-use std::fmt::Debug;
 
 use crate::atn_state::ATNStateRef;
 use crate::interval_set::IntervalSet;

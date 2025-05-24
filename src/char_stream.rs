@@ -1,8 +1,8 @@
 //! `IntStream` extension for Lexer that allows subslicing of underlying data
-use std::char::REPLACEMENT_CHARACTER;
-use std::convert::TryFrom;
-use std::fmt::Debug;
-use std::ops::{Index, Range, RangeFrom};
+use core::char::REPLACEMENT_CHARACTER;
+use core::convert::TryFrom;
+use core::fmt::Debug;
+use core::ops::{Index, Range, RangeFrom};
 
 use crate::int_stream::IntStream;
 

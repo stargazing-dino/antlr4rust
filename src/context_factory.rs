@@ -1,6 +1,6 @@
-use std::cell::{Ref, RefCell, RefMut};
-use std::marker::PhantomData;
-use std::ops::{CoerceUnsized, Deref, DerefMut};
+use core::cell::{Ref, RefCell, RefMut};
+use core::marker::PhantomData;
+use core::ops::{CoerceUnsized, Deref, DerefMut};
 use std::rc::Rc;
 
 use better_any::TidExt;
@@ -36,7 +36,9 @@ impl<'a, T: 'a + ?Sized> ContextFactory<'a, T> for RcFactory {
         Rc::new(inner)
     }
 
-    fn borrow(&'a self, this: &'a Self::CtxRef) -> Self::Ref { &*this }
+    fn borrow(&'a self, this: &'a Self::CtxRef) -> Self::Ref {
+        &*this
+    }
 
     fn borrow_mut(&'a mut self, this: &'a mut Self::CtxRef) -> Self::RefMut {
         unsafe { Rc::get_mut_unchecked(this) }
@@ -66,7 +68,9 @@ where
         unsafe { &*(res as *mut RefCell<Dyn> as *mut RefCell<T>) }
     }
 
-    fn borrow(&'a self, this: &'a Self::CtxRef) -> Self::Ref { RefCell::borrow(this) }
+    fn borrow(&'a self, this: &'a Self::CtxRef) -> Self::Ref {
+        RefCell::borrow(this)
+    }
 
     fn borrow_mut(&'a mut self, this: &'a mut Self::CtxRef) -> Self::RefMut {
         RefCell::borrow_mut(this)
@@ -108,12 +112,12 @@ where
     fn borrow(&'a self, this: &'a Self::CtxRef) -> Self::Ref {
         let this = &*self.arena[this.idx];
         // safe because we know that T:CoerceUnsized<Dyn>
-        unsafe { std::mem::transmute_copy::<&Dyn, &T>(&this) }
+        unsafe { core::mem::transmute_copy::<&Dyn, &T>(&this) }
     }
 
     fn borrow_mut(&'a mut self, this: &'a mut Self::CtxRef) -> Self::RefMut {
         let this = &mut *self.arena[this.idx];
-        unsafe { std::mem::transmute_copy::<&mut Dyn, &mut T>(&this) }
+        unsafe { core::mem::transmute_copy::<&mut Dyn, &mut T>(&this) }
     }
 }
 
@@ -143,9 +147,13 @@ where
         unsafe { &*(r as *const _ as *const _) }
     }
 
-    fn borrow(&'a self, this: &'a Self::CtxRef) -> Self::Ref { self.guard.ro(this) }
+    fn borrow(&'a self, this: &'a Self::CtxRef) -> Self::Ref {
+        self.guard.ro(this)
+    }
 
-    fn borrow_mut(&'a mut self, this: &'a mut Self::CtxRef) -> Self::RefMut { self.guard.rw(this) }
+    fn borrow_mut(&'a mut self, this: &'a mut Self::CtxRef) -> Self::RefMut {
+        self.guard.rw(this)
+    }
 }
 
 trait Cast<T> {
@@ -163,7 +171,9 @@ where
     type WrappedT = Rc<T>;
     type WrappedSelf = Rc<Y>;
 
-    fn downcast(this: Self::WrappedSelf) -> Self::WrappedT { this.downcast_rc().unwrap() }
+    fn downcast(this: Self::WrappedSelf) -> Self::WrappedT {
+        this.downcast_rc().unwrap()
+    }
 }
 
 //

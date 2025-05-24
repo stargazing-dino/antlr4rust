@@ -30,12 +30,12 @@ use antlr_rust::TokenSource;
 use antlr_rust::lazy_static;
 use antlr_rust::{TidAble, TidExt};
 
-use std::any::{Any, TypeId};
-use std::borrow::{Borrow, BorrowMut};
-use std::cell::RefCell;
-use std::convert::TryFrom;
-use std::marker::PhantomData;
-use std::ops::{Deref, DerefMut};
+use core::any::{Any, TypeId};
+use core::borrow::{Borrow, BorrowMut};
+use core::convert::TryFrom;
+use core::marker::PhantomData;
+use core::ops::{Deref, DerefMut};
+use core::cell::RefCell;
 use std::rc::Rc;
 use std::sync::Arc;
 

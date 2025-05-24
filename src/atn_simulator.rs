@@ -1,5 +1,5 @@
-use std::fmt::{Debug, Error, Formatter};
-use std::ops::Deref;
+use core::fmt::{Debug, Error, Formatter};
+use core::ops::Deref;
 use std::sync::Arc;
 
 use crate::atn::ATN;

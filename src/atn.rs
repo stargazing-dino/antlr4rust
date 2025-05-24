@@ -12,7 +12,7 @@ use crate::rule_context::EmptyContextType;
 use crate::token::{TOKEN_EOF, TOKEN_EPSILON};
 use crate::token_factory::CommonTokenFactory;
 use crate::transition::RuleTransition;
-use std::fmt::{Debug, Formatter};
+use core::fmt::{Debug, Formatter};
 
 pub const INVALID_ALT: isize = 0;
 
@@ -44,7 +44,7 @@ pub struct ATN {
 }
 
 impl Debug for ATN {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter<'_>) -> core::fmt::Result {
         f.debug_struct("ATN")
             .field("grammar_type", &self.grammar_type)
             .field("max_token_type", &self.max_token_type)

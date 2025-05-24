@@ -1,13 +1,13 @@
 //! Base parser implementation
-use std::borrow::Borrow;
-use std::cell::Cell;
+use core::borrow::Borrow;
+use core::cell::Cell;
 use std::collections::{HashMap, HashSet};
 
-use std::marker::PhantomData;
-use std::ops::{Deref, DerefMut};
+use core::marker::PhantomData;
+use core::ops::{Deref, DerefMut};
+use core::{ptr, usize};
 use std::rc::Rc;
 use std::sync::Arc;
-use std::{ptr, usize};
 
 use bit_set::BitSet;
 
