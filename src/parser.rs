@@ -1,10 +1,12 @@
 //! Base parser implementation
 use core::borrow::Borrow;
+use core::cell::{Cell, RefCell};
 use core::marker::PhantomData;
 use core::ops::{Deref, DerefMut};
-use core::cell::{Cell, RefCell};
 use std::rc::Rc;
 use std::sync::Arc;
+
+use better_any::TidAble;
 
 use crate::atn::ATN;
 use crate::atn_simulator::IATNSimulator;
@@ -23,7 +25,6 @@ use crate::tree::{ErrorNode, Listenable, ParseTreeListener, TerminalNode};
 use crate::utils::cell_update;
 use crate::vocabulary::Vocabulary;
 use crate::{CoerceFrom, CoerceTo};
-use better_any::{Tid, TidAble};
 
 /// parser functionality required for `ParserATNSimulator` to work
 #[allow(missing_docs)] // todo rewrite it so downstream crates actually could meaningfully implement it
