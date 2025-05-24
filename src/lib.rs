@@ -1,4 +1,5 @@
 #![crate_type = "lib"]
+#![cfg_attr(not(feature = "std"), no_std)]
 // #![feature(try_blocks)]
 //#![feature(nll)]
 // #![feature(raw)]
@@ -83,6 +84,9 @@
 //! [`Token`]: crate::token::Token
 //! [`TokenStream`]: crate::token_stream::TokenStream
 //! [`ParserRuleContext`]: crate::parser_rule_context::ParserRuleContext
+
+#[cfg(not(feature = "std"))]
+extern crate alloc;
 
 #[macro_use]
 extern crate lazy_static;
